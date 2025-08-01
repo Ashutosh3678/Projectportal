@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Project Detail Page</title>
+
+        <!-- CSS FILES -->        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap" rel="stylesheet">
+                        
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+        <link href="../css/bootstrap-icons.css" rel="stylesheet">
+
+        <link href="../css/templatemo-topic-listing.css" rel="stylesheet">
+
+        <link href="../css/login-profile.css" rel="stylesheet">
+        <style>
+            @media (max-width: 767px) {
+                .hero-section {
+                    padding: 30px 0 10px 0 !important;
+                }
+                .custom-form {
+                    padding: 20px 10px !important;
+                }
+                .custom-form .form-control, .custom-form select, .custom-btn {
+                    font-size: 1rem !important;
+                    padding: 10px !important;
+                }
+                h1.text-white.text-center {
+                    font-size: 2rem !important;
+                }
+                h6.text-center {
+                    font-size: 1rem !important;
+                }
+            }
+            .custom-block, .card {
+                transition: transform 0.3s cubic-bezier(.25,.8,.25,1), box-shadow 0.3s;
+                box-shadow: 0 8px 24px rgba(0,0,0,0.08), 0 1.5px 6px rgba(0,0,0,0.08);
+            }
+            .custom-block:hover, .card:hover {
+                transform: translateY(-8px) scale(1.03) perspective(600px) rotateX(2deg) rotateY(-2deg);
+                box-shadow: 0 16px 40px rgba(0,0,0,0.18), 0 3px 12px rgba(0,0,0,0.12);
+            }
+            .custom-btn, .btn {
+                transition: transform 0.2s cubic-bezier(.25,.8,.25,1), box-shadow 0.2s;
+            }
+            .custom-btn:hover, .btn:hover {
+                transform: scale(1.05) perspective(400px) rotateX(2deg);
+                box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+            }
+            .main-animate {
+                opacity: 0;
+                transform: translateY(40px) scale(0.98);
+                animation: fadeInUp 0.8s cubic-bezier(.25,.8,.25,1) 0.2s forwards;
+            }
+            @keyframes fadeInUp {
+                to {
+                    opacity: 1;
+                    transform: none;
+                }
+            }
+            #vanta-bg {
+                position: fixed;
+                top: 0; left: 0; width: 100vw; height: 100vh;
+                z-index: 0;
+            }
+            main, .hero-section, .site-footer, .main-animate {
+                position: relative;
+                z-index: 1;
+            }
+        </style>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+    </head>
+    
+    <body id="top">
+        <div id="vanta-bg"></div>
+        <main class="main-animate">
+
+            <nav class="navbar navbar-expand-lg">
+                <div class="container">
+                    <a class="navbar-brand" href="/html/index.html">
+                        <i class="bi-back"></i>
+                        <span>Projects</span>
+                    </a>
+
+                    <div class="d-lg-none ms-auto me-4">
+                        <a href="#top" class="navbar-icon bi-person smoothscroll"></a>
+                    </div>
+    
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+        <!-- hi -->
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-lg-5 me-lg-auto">
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="/html/index.html#section_1">Home</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="/html/index.html#section_2">Browse Topics</a>
+                            </li>
+    
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="/html/index.html#section_3">How it works</a>
+                            </li>
+    
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="/html/index.html#section_5">Contact</a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="/html/contact.html">Add Project</a>
+                            </li>
+
+                        </ul>
+
+                        <div class="d-none d-lg-block">
+                            <a href="/html/student-login.html" class="navbar-icon bi-person" onclick="window.location.href='/html/student-login.html'; return false;"></a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            
+
+            <header class="site-header d-flex flex-column justify-content-center align-items-center">
+                <div class="container">
+                    <div class="row justify-content-center align-items-center">
+
+                        <div class="col-lg-5 col-12 mb-5">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="/html/index.html">Homepage</a></li>
+
+                                    <li class="breadcrumb-item active" aria-current="page">Clubs @ MLRIT</li>
+                                </ol>
+                            </nav>
+
+                            <h2 class="text-white">Clubs At <br> MLRIT</h2>
+
+                            <div class="d-flex align-items-center mt-5">
+                                <a href="#topics-detail" class="btn custom-btn custom-border-btn smoothscroll me-4">Read More</a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-5 col-12">
+                            <div class="topics-detail-block bg-white shadow-lg">
+                                <img src="../images/clubs.png" class="topics-detail-block-image img-fluid">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </header>
+
+
+            <section class="topics-detail-section section-padding" id="topics-detail">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-8 col-12 m-auto">
+                            <h3 class="mb-4">A website which shows the list of clubs at MLRIT</h3>
+
+                            <p>Academic clubs are a great option that will complement your college experience. Usually, these clubs will be based on specific majors or specialties that the school offers, so jo ining one is a great way to supplement your studies. 
+                                You'll find many academic clubs in college, some of which may include Biology Club, Economics Club, and Spanish Club. If you're interested in another subject that you're not majoring in, or if you're still not exactly sure what to major in at all, joining an academic club is a great low-risk way to test the waters. 
+                                Being a part of an academic club can expand your network within your major, allowing you to gain subject matter expertise. It also encourages you to build strong mentorships and relationships with faculty and other students. 
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+            
+        </main>
+		
+        <footer class="site-footer section-padding">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-12 mb-4 pb-2">
+                        <a class="navbar-brand mb-2" href="/html/index.html">
+                            <i class="bi-back"></i>
+                            <span>Projects</span>
+                        </a>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <h6 class="site-footer-title mb-3">Resources</h6>
+
+                        <ul class="site-footer-links">
+                            <li class="site-footer-link-item">
+                                <a href="/html/index.html" class="site-footer-link">Home</a>
+                            </li>
+
+                            <li class="site-footer-link-item">
+                                <a href="/html/index.html#section_3" class="site-footer-link">How it works</a>
+                            </li>
+
+                            <li class="site-footer-link-item">
+                                <a href="/html/index.html#section_2" class="site-footer-link">Browse Projects</a>
+                            </li>
+
+                            <li class="site-footer-link-item">
+                                <a href="/html/index.html#section_5" class="site-footer-link">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 col-6 mb-4 mb-lg-0">
+                        <h6 class="site-footer-title mb-3">Information</h6>
+
+                        <p class="text-white d-flex mb-1">
+                            <a href="tel: 305-240-9671" class="site-footer-link">
+                                7660091140
+                            </a>
+                        </p>
+
+                        <p class="text-white d-flex">
+                            <a href="mailto:projects@gmail.com" class="site-footer-link">
+                                projects@gmail.com
+                            </a>
+                        </p>
+                    </div>
+
+                    <!-- <div class="col-lg-3 col-md-4 col-12 mt-4 mt-lg-0 ms-auto">
+                        <p class="copyright-text mt-lg-5 mt-4">Copyright © 2023 Projects. All rights reserved.
+                        </p>                        
+                    </div> -->
+
+                </div>
+            </div>
+        </footer>
+
+        <!-- JAVASCRIPT FILES -->
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script src="../js/jquery.sticky.js"></script>
+        <script src="../js/custom.js"></script>
+
+    <script src="../js/login-debug.js"></script>
+<script src="../js/keyboard-shortcuts.js"></script>
+<script src="../js/login-profile.js"></script>
+<script>
+window.addEventListener('DOMContentLoaded', function() {
+  if (window.VANTA) {
+    VANTA.WAVES({
+      el: "#vanta-bg",
+      mouseControls: true,
+      touchControls: true,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.0,
+      scaleMobile: 1.0,
+      color: 0x1abc9c,
+      shininess: 50.0,
+      waveHeight: 20.0,
+      waveSpeed: 0.7,
+      zoom: 0.85
+    });
+  }
+});
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

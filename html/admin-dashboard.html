@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Projects</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/templatemo-topic-listing.css">
+    <style>
+        .submissions-container {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .submission-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .badge {
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+        }
+        .badge-pending {
+            background-color: #ffc107;
+            color: #212529;
+        }
+        .badge-approved {
+            background-color: #28a745;
+            color: white;
+        }
+        .badge-rejected {
+            background-color: #dc3545;
+            color: white;
+        }
+        .badge-info {
+            background-color: #17a2b8;
+            color: white;
+        }
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .logout-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        .formspree-submission {
+            border-left: 4px solid #17a2b8;
+        }
+        @media (max-width: 767px) {
+            .hero-section {
+                padding: 30px 0 10px 0 !important;
+            }
+            .custom-form {
+                padding: 20px 10px !important;
+            }
+            .custom-form .form-control, .custom-form select, .custom-btn {
+                font-size: 1rem !important;
+                padding: 10px !important;
+            }
+            h1.text-white.text-center {
+                font-size: 2rem !important;
+            }
+            h6.text-center {
+                font-size: 1rem !important;
+            }
+        }
+        .custom-block, .card {
+            transition: transform 0.3s cubic-bezier(.25,.8,.25,1), box-shadow 0.3s;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08), 0 1.5px 6px rgba(0,0,0,0.08);
+        }
+        .custom-block:hover, .card:hover {
+            transform: translateY(-8px) scale(1.03) perspective(600px) rotateX(2deg) rotateY(-2deg);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.18), 0 3px 12px rgba(0,0,0,0.12);
+        }
+        .custom-btn, .btn {
+            transition: transform 0.2s cubic-bezier(.25,.8,.25,1), box-shadow 0.2s;
+        }
+        .custom-btn:hover, .btn:hover {
+            transform: scale(1.05) perspective(400px) rotateX(2deg);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+        }
+        .main-animate {
+            opacity: 0;
+            transform: translateY(40px) scale(0.98);
+            animation: fadeInUp 0.8s cubic-bezier(.25,.8,.25,1) 0.2s forwards;
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+        #vanta-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: 0;
+        }
+        main, .hero-section, .site-footer, .main-animate {
+            position: relative;
+            z-index: 1;
+        }
+        .hero-section button[type="button"] {
+            background-color: var(--primary-color);
+            border: 0;
+            border-radius: var(--border-radius-large) !important;
+            color: var(--white-color);
+            max-width: 150px;
+        }
+        .site-footer {
+            position: relative;
+            z-index: 1;
+            background: linear-gradient(45deg, #1abc9c, #3498db);
+            animation: gradientBG 15s ease infinite;
+            background-size: 400% 400%;
+        }
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        .site-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            z-index: -1;
+        }
+        .site-footer .container {
+            position: relative;
+            z-index: 2;
+        }
+    </style>
+    <link href="../css/login-profile.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+</head>
+<body id="top">
+    <main class="main-animate">
+        <header class="site-header d-flex flex-column justify-content-center align-items-center">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-12 col-12">
+                        <h1>Admin Dashboard</h1>
+                        <button id="logout-btn" class="btn btn-danger logout-btn">Logout</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="section-padding section-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-12 text-center mb-4">
+                        <h2>Project Submissions</h2>
+                    </div>
+
+                    <div class="col-lg-12 col-12">
+                        <ul class="nav nav-tabs mb-4" id="submissionTabs" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all-submissions" type="button" role="tab" aria-controls="all-submissions" aria-selected="true">All</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pending-tab" data-bs-toggle="tab" data-bs-target="#pending-submissions" type="button" role="tab" aria-controls="pending-submissions" aria-selected="false">Pending</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="approved-tab" data-bs-toggle="tab" data-bs-target="#approved-submissions" type="button" role="tab" aria-controls="approved-submissions" aria-selected="false">Approved</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="rejected-tab" data-bs-toggle="tab" data-bs-target="#rejected-submissions" type="button" role="tab" aria-controls="rejected-submissions" aria-selected="false">Rejected</button>
+                            </li>
+                        </ul>
+
+                        <div class="tab-content" id="submissionTabContent">
+                            <div class="tab-pane fade show active" id="all-submissions" role="tabpanel" aria-labelledby="all-tab">
+                                <div id="all-submissions-container" class="submissions-container">
+                                    <div class="text-center">
+                                        <div class="spinner-border" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="pending-submissions" role="tabpanel" aria-labelledby="pending-tab">
+                                <div id="pending-submissions-container" class="submissions-container">
+                                    <div class="text-center">
+                                        <div class="spinner-border" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="approved-submissions" role="tabpanel" aria-labelledby="approved-tab">
+                                <div id="approved-submissions-container" class="submissions-container">
+                                    <div class="text-center">
+                                        <div class="spinner-border" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="rejected-submissions" role="tabpanel" aria-labelledby="rejected-tab">
+                                <div id="rejected-submissions-container" class="submissions-container">
+                                    <div class="text-center">
+                                        <div class="spinner-border" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer section-padding" style="position:relative;overflow:hidden;">
+        <div id="vanta-footer" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;"></div>
+        <div class="container" style="position:relative;z-index:1; color: #111;">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p style="color:#111;">Admin Dashboard Footer</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/custom.js"></script>
+    <script src="../js/admin-dashboard.js"></script>
+    <script>
+    window.addEventListener('DOMContentLoaded', function() {
+        if (window.VANTA) {
+            VANTA.WAVES({
+                el: "#vanta-footer",
+                mouseControls: true,
+                touchControls: true,
+                minHeight: 200.00,
+                minWidth: 200.00,
+                scale: 1.0,
+                scaleMobile: 1.0,
+                color: 0x1abc9c,
+                shininess: 50.0,
+                waveHeight: 20.0,
+                waveSpeed: 0.7,
+                zoom: 0.85
+            });
+        }
+    });
+    </script>
+</body>
+</html> 
+
+
+
+
+
+
+
+
+
