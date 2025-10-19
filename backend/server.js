@@ -28,9 +28,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 
-// Static files - serve the frontend
-app.use(express.static(path.join(__dirname)));
-app.use(express.static(path.join(__dirname, 'html')));
+// Static files - serve the frontend from parent directory
+app.use(express.static(path.join(__dirname, '../frontend')));
+app.use('/css', express.static(path.join(__dirname, '../frontend/css')));
+app.use('/js', express.static(path.join(__dirname, '../frontend/js')));
+app.use('/images', express.static(path.join(__dirname, '../frontend/images')));
+app.use('/fonts', express.static(path.join(__dirname, '../frontend/fonts')));
+app.use('/html', express.static(path.join(__dirname, '../frontend/html')));
 
 // API routes
 app.use('/api/users', userRoutes);
@@ -40,20 +44,21 @@ app.use('/api/submissions', submissionRoutes);
 app.use('/api/formspree-submissions', formspreeRoutes);
 app.use('/api/ai', aiRoutes);
 
+// Serve index.html for the root path
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/html', 'index.html'));
+});
+
 // Handle HTML file requests
 app.get('*.html', (req, res, next) => {
-    const htmlPath = path.join(__dirname, req.path);
+    const fileName = path.basename(req.path);
+    const htmlPath = path.join(__dirname, '../frontend/html', fileName);
     res.sendFile(htmlPath, err => {
         if (err) {
             console.error(`Error serving ${req.path}:`, err);
             next();
         }
     });
-});
-
-// Serve index.html for non-matching routes (for client-side routing)
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'html', 'index.html'));
 });
 
 // Error handling middleware
