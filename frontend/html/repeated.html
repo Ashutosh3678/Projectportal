@@ -1,91 +1,114 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <meta name="description" content="">
-        <meta name="author" content="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Repeated Projects</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-        <!-- CSS FILES -->        
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Repeated Projects</title>
+
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- hi -->
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap" rel="stylesheet">
-                        
-        <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap"
+        rel="stylesheet">
 
-        <link href="../css/bootstrap-icons.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
-        <link href="../css/templatemo-topic-listing.css" rel="stylesheet">
+    <link href="../css/bootstrap-icons.css" rel="stylesheet">
 
-        <link href="../css/login-profile.css" rel="stylesheet">
+    <link href="../css/templatemo-topic-listing.css" rel="stylesheet">
+
+    <link href="../css/login-profile.css" rel="stylesheet">
     <style>
         @media (max-width: 767px) {
             .hero-section {
                 padding: 30px 0 10px 0 !important;
             }
+
             .custom-form {
                 padding: 20px 10px !important;
             }
-            .custom-form .form-control, .custom-form select, .custom-btn {
+
+            .custom-form .form-control,
+            .custom-form select,
+            .custom-btn {
                 font-size: 1rem !important;
                 padding: 10px !important;
             }
+
             h1.text-white.text-center {
                 font-size: 2rem !important;
             }
+
             h6.text-center {
                 font-size: 1rem !important;
             }
         }
-        .custom-block, .card {
+
+        .custom-block,
+        .card {
             transition: transform 0.3s ease, box-shadow 0.3s;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
         }
-        .custom-block:hover, .card:hover {
+
+        .custom-block:hover,
+        .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
         }
-        .custom-btn, .btn {
+
+        .custom-btn,
+        .btn {
             transition: transform 0.2s ease, box-shadow 0.2s;
         }
-        .custom-btn:hover, .btn:hover {
+
+        .custom-btn:hover,
+        .btn:hover {
             transform: scale(1.02);
-            box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
         }
+
         .main-animate {
             opacity: 0;
             transform: translateY(20px);
             animation: fadeInUp 0.8s ease 0.2s forwards;
         }
+
         @keyframes fadeInUp {
             to {
                 opacity: 1;
                 transform: none;
             }
         }
+
         .site-header {
             padding-bottom: 60px;
         }
+
         .hero-section .input-group {
             background-color: var(--white-color);
             border-radius: var(--border-radius-large);
             padding: 10px 15px;
         }
+
         .hero-section .input-group-text {
             background-color: transparent;
             border: 0;
         }
+
         .hero-section input[type="search"] {
             border: 0;
             box-shadow: none;
             margin-bottom: 0;
             padding-left: 0;
         }
+
         .hero-section button[type="button"] {
             background-color: var(--primary-color);
             border: 0;
@@ -93,6 +116,7 @@
             color: var(--white-color);
             max-width: 150px;
         }
+
         .site-footer {
             position: relative;
             z-index: 1;
@@ -100,17 +124,21 @@
             animation: gradientBG 15s ease infinite;
             background-size: 400% 400%;
         }
+
         @keyframes gradientBG {
             0% {
                 background-position: 0% 50%;
             }
+
             50% {
                 background-position: 100% 50%;
             }
+
             100% {
                 background-position: 0% 50%;
             }
         }
+
         .site-footer::before {
             content: '';
             position: absolute;
@@ -122,213 +150,219 @@
             backdrop-filter: blur(5px);
             z-index: -1;
         }
+
         .site-footer .container {
             position: relative;
             z-index: 2;
         }
     </style>
 </head>
-    
-    <body class="topics-listing-page" id="top">
-        <main class="main-animate">
 
-            <nav class="navbar navbar-expand-lg">
-                <div class="container">
-                    <a class="navbar-brand" href="/html/index.html">
-                        <i class="bi-back"></i>
-                        <span>Projects</span>
-                    </a>
+<body class="topics-listing-page" id="top">
+    <main class="main-animate">
 
-                    <div class="d-lg-none ms-auto me-4">
-                        <a href="#top" class="navbar-icon bi-person smoothscroll"></a>
-                    </div>
-    
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-    
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ms-lg-5 me-lg-auto">
-                            <li class="nav-item">
-                                <a class="nav-link click-scroll" href="/html/index.html#section_1">Home</a>
-                            </li>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <i class="bi-back"></i>
+                    <span>Projects</span>
+                </a>
 
-                            <li class="nav-item">
-                                <a class="nav-link click-scroll" href="/html/index.html#section_2">Browse Topics</a>
-                            </li>
-    
-                            <li class="nav-item">
-                                <a class="nav-link click-scroll" href="/html/index.html#section_3">How it works</a>
-                            </li>
-    
-                            <li class="nav-item">
-                                <a class="nav-link click-scroll" href="/html/index.html#section_5">Contact</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link click-scroll" href="/html/submit-project.html">Submit Project</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link click-scroll" href="ai-suggestions.html">AI Suggestions</a>
-                            </li>
-
-
-                            
-                        </ul>
-
-                        <div class="d-none d-lg-block">
-                            <a href="/html/student-login.html" class="navbar-icon bi-person" onclick="window.location.href='/html/student-login.html'; return false;"></a>
-                        </div>
-                    </div>
+                <div class="d-lg-none ms-auto me-4">
+                    <a href="#top" class="navbar-icon bi-person smoothscroll"></a>
                 </div>
-            </nav>            <header class="site-header d-flex flex-column justify-content-center align-items-center">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-5 col-12">
-                            <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="/html/index.html">Homepage</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Repeated Projects</li>
-                                </ol>
-                            </nav>
-                            <h2 class="text-white">Repeated Projects</h2>
-                        </div>
-                    </div>
 
-                </div>
-            </header>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-lg-5 me-lg-auto">
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="index.html#section_1">Home</a>
+                        </li>
 
-            <section class="section-padding">
-                <div class="container">
-                    <div class="row">
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="index.html#section_2">Browse Topics</a>
+                        </li>
 
-                        <div class="col-lg-12 col-12 text-center">
-                            <h3 class="mb-4">List of projects from students</h3>
-                        </div>
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="index.html#section_3">How it works</a>
+                        </li>
 
-                        <div class="col-lg-8 col-12 mt-3 mx-auto" id="projects-container">
-                            <!-- Projects will be loaded here dynamically -->
-                            <div class="text-center my-5">
-                                <div class="spinner-border" role="status">
-                                    <span class="visually-hidden">Loading...</span>
-                                </div>
-                                <p>Loading projects...</p>
-                            </div>
-                        </div>
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="index.html#section_5">Contact</a>
+                        </li>
 
-                        <div class="col-lg-12 col-12">
-                            <nav aria-label="Page navigation example">
-                                <ul class="pagination justify-content-center mb-0" id="pagination-container">
-                                    <!-- Pagination will be added dynamically -->
-                                </ul>
-                            </nav>
-                        </div>
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="submit-project.html">Submit Project</a>
+                        </li>
 
-                    </div>
-                </div>
-            </section>
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="ai-suggestions.html">AI Suggestions</a>
+                        </li>
 
 
-            
-        </main>
 
-		<footer class="site-footer section-padding" style="position:relative;overflow:hidden;">
-            <div id="vanta-footer" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;"></div>
-            <div class="container" style="position:relative;z-index:1; color: #111;">
-                <div class="row">
-                    <div class="col-lg-3 col-12 mb-4 pb-2">
-                        <a class="navbar-brand mb-2" href="/html/index.html" style="color:#111;">
-                            <i class="bi-back"></i>
-                            <span>Projects</span>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-6">
-                        <h6 class="site-footer-title mb-3" style="color:#111;">Resources</h6>
-                        <ul class="site-footer-links">
-                            <li class="site-footer-link-item">
-                                <a href="/html/index.html" class="site-footer-link" style="color:#111;">Home</a>
-                            </li>
-                            <li class="site-footer-link-item">
-                                <a href="/html/index.html#section_3" class="site-footer-link" style="color:#111;">How it works</a>
-                            </li>
-                            <li class="site-footer-link-item">
-                                <a href="/html/index.html#section_4" class="site-footer-link" style="color:#111;">Contact</a>
-                            </li>
-                            <li class="site-footer-link-item">
-                                <a href="/html/index.html#section_2" class="site-footer-link" style="color:#111;">Browse Projects</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-6 mb-4 mb-lg-0">
-                        <h6 class="site-footer-title mb-3" style="color:#111;">Information</h6>
-                        <p class="d-flex mb-1" style="color:#111;">
-                            <a href="tel: 305-240-9671" class="site-footer-link" style="color:#111;">7207802423</a>
-                        </p>
-                        <p class="d-flex" style="color:#111;">
-                            <a href="mailto:info@company.com" class="site-footer-link" style="color:#111;">mp.cie@gmail.com</a>
-                        </p>
+                    </ul>
+
+                    <div class="d-none d-lg-block">
+                        <a href="student-login.html" class="navbar-icon bi-person"
+                            onclick="window.location.href='student-login.html'; return false;"></a>
                     </div>
                 </div>
             </div>
-        </footer>
+        </nav>
+        <header class="site-header d-flex flex-column justify-content-center align-items-center">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-5 col-12">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html">Homepage</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Repeated Projects</li>
+                            </ol>
+                        </nav>
+                        <h2 class="text-white">Repeated Projects</h2>
+                    </div>
+                </div>
 
-        <!-- JAVASCRIPT FILES -->
-        <script src="../js/jquery.min.js"></script>
-        <script src="../js/bootstrap.bundle.min.js"></script>
-        <script src="../js/jquery.sticky.js"></script>
-        <script src="../js/custom.js"></script>
-        <script src="../js/projects.js"></script>
-        
-        <!-- Pagination Script -->
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                // Load projects from database
-                loadProjects();
-                
+            </div>
+        </header>
 
-            });
 
-            // Function to load projects
-            async function loadProjects() {
-                try {
-                    const projectsContainer = document.getElementById('projects-container');
-                    
-                    // You can replace this with actual fetch from backend when ready
-                    // For now we'll use dummy data
-                    const dummyProjects = [
-                        { title: "Career Guidance Website", description: "A website which guides you to select your career.", popularity: 75, imageUrl: "../images/topics/undraw_Redesign_feedback_re_jvm0.png", category: "Web Development" },
-                        { title: "Clubs @ MLRIT", description: "A website which displays different clubs at MLRIT.", popularity: 65, imageUrl: "../images/topics/undraw_Remote_design_team_re_urdx.png", category: "Web Development" },
-                        { title: "To Do App", description: "To Do app which records your tasks.", popularity: 100, imageUrl: "../images/topics/colleagues-working-cozy-office-medium-shot.png", category: "Web Development" },
-                        { title: "Plant Watering System", description: "Automatic plant watering system using humidity sensor.", popularity: 30, imageUrl: "../images/topics/undraw_online_ad_re_ol62.png", category: "IOT" },
-                        { title: "Water Level Checker", description: "A Device Which Checks Water Level To Avoid Floods", popularity: 65, imageUrl: "../images/topics/undraw_Group_video_re_btu7.png", category: "IOT" },
-                        { title: "Water trash collector", description: "Collects trash from water bodies using solar", popularity: 50, imageUrl: "../images/topics/undraw_viral_tweet_gndb.png", category: "IOT" },
-                        { title: "Student Management System", description: "A web application to manage student data", popularity: 45, imageUrl: "../images/topics/undraw_happy_music_g6wc.png", category: "Web Development" },
-                        { title: "Smart Home Automation", description: "Control your home devices with a smartphone app", popularity: 80, imageUrl: "../images/topics/undraw_Educator_re_ju47.png", category: "IOT" }
-                    ];
-                    
-                    renderProjects(dummyProjects);
-                    setupPagination(dummyProjects.length);
-                    
-                    // Show first page
-                    showPage(1);
-                } catch (error) {
-                    console.error('Error loading projects:', error);
-                    document.getElementById('projects-container').innerHTML = 
-                        '<div class="text-center my-5"><p>Error loading projects. Please try again later.</p></div>';
-                }
-            }
-            
-            // Render all projects HTML
-            function renderProjects(projects) {
+        <section class="section-padding">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-12 col-12 text-center">
+                        <h3 class="mb-4">List of projects from students</h3>
+                    </div>
+
+                    <div class="col-lg-8 col-12 mt-3 mx-auto" id="projects-container">
+                        <!-- Projects will be loaded here dynamically -->
+                        <div class="text-center my-5">
+                            <div class="spinner-border" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                            <p>Loading projects...</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 col-12">
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination justify-content-center mb-0" id="pagination-container">
+                                <!-- Pagination will be added dynamically -->
+                            </ul>
+                        </nav>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+
+    </main>
+
+    <footer class="site-footer section-padding" style="position:relative;overflow:hidden;">
+        <div id="vanta-footer" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;"></div>
+        <div class="container" style="position:relative;z-index:1; color: #111;">
+            <div class="row">
+                <div class="col-lg-3 col-12 mb-4 pb-2">
+                    <a class="navbar-brand mb-2" href="index.html" style="color:#111;">
+                        <i class="bi-back"></i>
+                        <span>Projects</span>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-6">
+                    <h6 class="site-footer-title mb-3" style="color:#111;">Resources</h6>
+                    <ul class="site-footer-links">
+                        <li class="site-footer-link-item">
+                            <a href="index.html" class="site-footer-link" style="color:#111;">Home</a>
+                        </li>
+                        <li class="site-footer-link-item">
+                            <a href="index.html#section_3" class="site-footer-link" style="color:#111;">How it works</a>
+                        </li>
+                        <li class="site-footer-link-item">
+                            <a href="index.html#section_4" class="site-footer-link" style="color:#111;">Contact</a>
+                        </li>
+                        <li class="site-footer-link-item">
+                            <a href="index.html#section_2" class="site-footer-link" style="color:#111;">Browse
+                                Projects</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 col-6 mb-4 mb-lg-0">
+                    <h6 class="site-footer-title mb-3" style="color:#111;">Information</h6>
+                    <p class="d-flex mb-1" style="color:#111;">
+                        <a href="tel: 305-240-9671" class="site-footer-link" style="color:#111;">7207802423</a>
+                    </p>
+                    <p class="d-flex" style="color:#111;">
+                        <a href="mailto:info@company.com" class="site-footer-link"
+                            style="color:#111;">mp.cie@gmail.com</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT FILES -->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/jquery.sticky.js"></script>
+    <script src="../js/custom.js"></script>
+    <script src="../js/projects.js"></script>
+
+    <!-- Pagination Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Load projects from database
+            loadProjects();
+
+
+        });
+
+        // Function to load projects
+        async function loadProjects() {
+            try {
                 const projectsContainer = document.getElementById('projects-container');
-                let html = '';
-                
-                projects.forEach(project => {
-                    const badgeClass = getCategoryBadgeClass(project.category);
-                    
-                    html += `
+
+                // You can replace this with actual fetch from backend when ready
+                // For now we'll use dummy data
+                const dummyProjects = [
+                    { title: "Career Guidance Website", description: "A website which guides you to select your career.", popularity: 75, imageUrl: "../images/topics/undraw_Redesign_feedback_re_jvm0.png", category: "Web Development" },
+                    { title: "Clubs @ MLRIT", description: "A website which displays different clubs at MLRIT.", popularity: 65, imageUrl: "../images/topics/undraw_Remote_design_team_re_urdx.png", category: "Web Development" },
+                    { title: "To Do App", description: "To Do app which records your tasks.", popularity: 100, imageUrl: "../images/topics/colleagues-working-cozy-office-medium-shot.png", category: "Web Development" },
+                    { title: "Plant Watering System", description: "Automatic plant watering system using humidity sensor.", popularity: 30, imageUrl: "../images/topics/undraw_online_ad_re_ol62.png", category: "IOT" },
+                    { title: "Water Level Checker", description: "A Device Which Checks Water Level To Avoid Floods", popularity: 65, imageUrl: "../images/topics/undraw_Group_video_re_btu7.png", category: "IOT" },
+                    { title: "Water trash collector", description: "Collects trash from water bodies using solar", popularity: 50, imageUrl: "../images/topics/undraw_viral_tweet_gndb.png", category: "IOT" },
+                    { title: "Student Management System", description: "A web application to manage student data", popularity: 45, imageUrl: "../images/topics/undraw_happy_music_g6wc.png", category: "Web Development" },
+                    { title: "Smart Home Automation", description: "Control your home devices with a smartphone app", popularity: 80, imageUrl: "../images/topics/undraw_Educator_re_ju47.png", category: "IOT" }
+                ];
+
+                renderProjects(dummyProjects);
+                setupPagination(dummyProjects.length);
+
+                // Show first page
+                showPage(1);
+            } catch (error) {
+                console.error('Error loading projects:', error);
+                document.getElementById('projects-container').innerHTML =
+                    '<div class="text-center my-5"><p>Error loading projects. Please try again later.</p></div>';
+            }
+        }
+
+        // Render all projects HTML
+        function renderProjects(projects) {
+            const projectsContainer = document.getElementById('projects-container');
+            let html = '';
+
+            projects.forEach(project => {
+                const badgeClass = getCategoryBadgeClass(project.category);
+
+                html += `
                         <div class="custom-block custom-block-topics-listing bg-white shadow-lg mb-5">
                             <div class="d-flex">
                                 <img src="${project.imageUrl}" class="custom-block-image img-fluid" alt="${project.title}">
@@ -346,159 +380,149 @@
                             </div>
                         </div>
                     `;
-                });
-                
-                projectsContainer.innerHTML = html;
-            }
-            
-            // Get category badge class
-            function getCategoryBadgeClass(category) {
-                const categoryClasses = {
-                    'Web Development': 'bg-design',
-                    'IOT': 'bg-advertising',
-                    'App Development': 'bg-finance',
-                    'API Development': 'bg-music',
-                    'UI/UX': 'bg-education',
-                    'Machine Learning': 'bg-design'
-                };
-                
-                return categoryClasses[category] || 'bg-secondary';
-            }
-            
-            // Setup pagination
-            function setupPagination(totalItems) {
-                const ITEMS_PER_PAGE = 5;
-                const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
-                const paginationContainer = document.getElementById('pagination-container');
-                
-                let html = '';
-                
-                // Previous button
-                html += `
+            });
+
+            projectsContainer.innerHTML = html;
+        }
+
+        // Get category badge class
+        function getCategoryBadgeClass(category) {
+            const categoryClasses = {
+                'Web Development': 'bg-design',
+                'IOT': 'bg-advertising',
+                'App Development': 'bg-finance',
+                'API Development': 'bg-music',
+                'UI/UX': 'bg-education',
+                'Machine Learning': 'bg-design'
+            };
+
+            return categoryClasses[category] || 'bg-secondary';
+        }
+
+        // Setup pagination
+        function setupPagination(totalItems) {
+            const ITEMS_PER_PAGE = 5;
+            const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
+            const paginationContainer = document.getElementById('pagination-container');
+
+            let html = '';
+
+            // Previous button
+            html += `
                     <li class="page-item disabled">
                         <a class="page-link" href="javascript:void(0)" onclick="showPage(0)" aria-label="Previous">
                             <span aria-hidden="true">Prev</span>
                         </a>
                     </li>
                 `;
-                
-                // Page numbers
-                for (let i = 1; i <= totalPages; i++) {
-                    html += `
+
+            // Page numbers
+            for (let i = 1; i <= totalPages; i++) {
+                html += `
                         <li class="page-item ${i === 1 ? 'active' : ''}">
                             <a class="page-link" href="javascript:void(0)" onclick="showPage(${i})">${i}</a>
                         </li>
                     `;
-                }
-                
-                // Next button
-                html += `
+            }
+
+            // Next button
+            html += `
                     <li class="page-item ${totalPages > 1 ? '' : 'disabled'}">
                         <a class="page-link" href="javascript:void(0)" onclick="showPage(2)" aria-label="Next">
                             <span aria-hidden="true">Next</span>
                         </a>
                     </li>
                 `;
-                
-                paginationContainer.innerHTML = html;
+
+            paginationContainer.innerHTML = html;
+        }
+
+        // Function to show specific page of projects
+        function showPage(pageNumber) {
+            const ITEMS_PER_PAGE = 5;
+            const allProjects = document.querySelectorAll('.custom-block-topics-listing');
+            const paginationItems = document.querySelectorAll('.page-item');
+            const totalPages = paginationItems.length - 2; // Subtract prev and next buttons
+
+            // Validate page number
+            if (pageNumber < 1) pageNumber = 1;
+            if (pageNumber > totalPages) pageNumber = totalPages;
+
+            // Hide all project items
+            allProjects.forEach(project => {
+                project.style.display = 'none';
+            });
+
+            // Show only projects for the selected page
+            const startIndex = (pageNumber - 1) * ITEMS_PER_PAGE;
+            const endIndex = startIndex + ITEMS_PER_PAGE;
+
+            for (let i = startIndex; i < endIndex && i < allProjects.length; i++) {
+                allProjects[i].style.display = 'block';
             }
-            
-            // Function to show specific page of projects
-            function showPage(pageNumber) {
-                const ITEMS_PER_PAGE = 5;
-                const allProjects = document.querySelectorAll('.custom-block-topics-listing');
-                const paginationItems = document.querySelectorAll('.page-item');
-                const totalPages = paginationItems.length - 2; // Subtract prev and next buttons
-                
-                // Validate page number
-                if (pageNumber < 1) pageNumber = 1;
-                if (pageNumber > totalPages) pageNumber = totalPages;
-                
-                // Hide all project items
-                allProjects.forEach(project => {
-                    project.style.display = 'none';
-                });
-                
-                // Show only projects for the selected page
-                const startIndex = (pageNumber - 1) * ITEMS_PER_PAGE;
-                const endIndex = startIndex + ITEMS_PER_PAGE;
-                
-                for (let i = startIndex; i < endIndex && i < allProjects.length; i++) {
-                    allProjects[i].style.display = 'block';
-                }
-                
-                // Update active page in pagination
-                if (paginationItems.length > 0) {
-                    paginationItems.forEach((item, index) => {
-                        // Skip prev (0) and next (last) buttons
-                        if (index > 0 && index < paginationItems.length - 1) {
-                            if (index === pageNumber) {
-                                item.classList.add('active');
-                            } else {
-                                item.classList.remove('active');
-                            }
+
+            // Update active page in pagination
+            if (paginationItems.length > 0) {
+                paginationItems.forEach((item, index) => {
+                    // Skip prev (0) and next (last) buttons
+                    if (index > 0 && index < paginationItems.length - 1) {
+                        if (index === pageNumber) {
+                            item.classList.add('active');
+                        } else {
+                            item.classList.remove('active');
                         }
-                    });
-                    
-                    // Update prev button
-                    const prevButton = paginationItems[0];
-                    if (pageNumber === 1) {
-                        prevButton.classList.add('disabled');
-                        prevButton.querySelector('a').setAttribute('onclick', 'showPage(' + pageNumber + ')');
-                    } else {
-                        prevButton.classList.remove('disabled');
-                        prevButton.querySelector('a').setAttribute('onclick', 'showPage(' + (pageNumber - 1) + ')');
                     }
-                    
-                    // Update next button
-                    const nextButton = paginationItems[paginationItems.length - 1];
-                    if (pageNumber === totalPages) {
-                        nextButton.classList.add('disabled');
-                        nextButton.querySelector('a').setAttribute('onclick', 'showPage(' + pageNumber + ')');
-                    } else {
-                        nextButton.classList.remove('disabled');
-                        nextButton.querySelector('a').setAttribute('onclick', 'showPage(' + (pageNumber + 1) + ')');
-                    }
+                });
+
+                // Update prev button
+                const prevButton = paginationItems[0];
+                if (pageNumber === 1) {
+                    prevButton.classList.add('disabled');
+                    prevButton.querySelector('a').setAttribute('onclick', 'showPage(' + pageNumber + ')');
+                } else {
+                    prevButton.classList.remove('disabled');
+                    prevButton.querySelector('a').setAttribute('onclick', 'showPage(' + (pageNumber - 1) + ')');
+                }
+
+                // Update next button
+                const nextButton = paginationItems[paginationItems.length - 1];
+                if (pageNumber === totalPages) {
+                    nextButton.classList.add('disabled');
+                    nextButton.querySelector('a').setAttribute('onclick', 'showPage(' + pageNumber + ')');
+                } else {
+                    nextButton.classList.remove('disabled');
+                    nextButton.querySelector('a').setAttribute('onclick', 'showPage(' + (pageNumber + 1) + ')');
                 }
             }
+        }
 
 
-        </script>
+    </script>
     <script src="../js/login-debug.js"></script>
-<script src="../js/keyboard-shortcuts.js"></script>
-<script src="../js/login-profile.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
-<script>
-window.addEventListener('DOMContentLoaded', function() {
-    if (window.VANTA) {
-        VANTA.WAVES({
-            el: "#vanta-footer",
-            mouseControls: true,
-            touchControls: true,
-            minHeight: 200.00,
-            minWidth: 200.00,
-            scale: 1.0,
-            scaleMobile: 1.0,
-            color: 0x1abc9c,
-            shininess: 50.0,
-            waveHeight: 20.0,
-            waveSpeed: 0.7,
-            zoom: 0.85
+    <script src="../js/keyboard-shortcuts.js"></script>
+    <script src="../js/login-profile.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', function () {
+            if (window.VANTA) {
+                VANTA.WAVES({
+                    el: "#vanta-footer",
+                    mouseControls: true,
+                    touchControls: true,
+                    minHeight: 200.00,
+                    minWidth: 200.00,
+                    scale: 1.0,
+                    scaleMobile: 1.0,
+                    color: 0x1abc9c,
+                    shininess: 50.0,
+                    waveHeight: 20.0,
+                    waveSpeed: 0.7,
+                    zoom: 0.85
+                });
+            }
         });
-    }
-});
-</script>
+    </script>
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-
-
-
