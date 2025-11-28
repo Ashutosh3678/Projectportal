@@ -32,7 +32,7 @@
       "dest": "/frontend/fonts/$1"
     },
     {
-      "src": "/(.*).html",
+      "src": "/(.*)\\.html",
       "dest": "/frontend/html/$1.html"
     },
     {
@@ -41,9 +41,14 @@
     },
     {
       "src": "/(.*)",
-      "dest": "/frontend/html/index.html"
+      "dest": "/frontend/html/$1.html"
     }
   ],
+  "functions": {
+    "backend/server.js": {
+      "includeFiles": "backend/**"
+    }
+  },
   "env": {
     "NODE_ENV": "production"
   }
