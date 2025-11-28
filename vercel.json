@@ -32,8 +32,16 @@
       "dest": "/frontend/fonts/$1"
     },
     {
-      "src": "/(.*)",
+      "src": "/(.*)\\.html",
+      "dest": "/frontend/html/$1.html"
+    },
+    {
+      "src": "/",
       "dest": "/frontend/html/index.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/frontend/html/$1.html"
     }
   ],
   "env": {
