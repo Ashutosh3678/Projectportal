@@ -4,7 +4,7 @@
   "description": "Backend for Projects",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "node server.js",
     "dev": "nodemon server.js --watch controllers --watch models --watch routes --watch middleware --watch config --watch utils",
     "import-projects": "node scripts/import-projects.js",
     "migrate-users": "node scripts/update-user-schema.js"

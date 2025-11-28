@@ -5,8 +5,10 @@
   "scripts": {
     "install-all": "cd backend && npm install",
     "backend": "cd backend && npm run dev",
-    "start": "npm run backend",
-    "dev": "npm run backend"
+    "start": "cd backend && npm start",
+    "dev": "npm run backend",
+    "build": "npm run install-all",
+    "vercel-build": "npm run install-all"
   },
   "keywords": [
     "mern",
