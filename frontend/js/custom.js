@@ -139,10 +139,34 @@ try {
   console.error('Error in search functionality:', err);
 }
 
-// Comment out the erroneous code that uses getElementByClass
-// let con = document.getElementByClass("hello");
-// con.addEventListener("click", (e) => {
-//   let popup = alert("Coming Soon");
-//   console.log(popup);
-// });
+// Site Protection: Disable right-click and inspect shortcuts
+document.addEventListener('contextmenu', function(e) {
+  e.preventDefault();
+});
 
+document.addEventListener('keydown', function(e) {
+  // Disable F12
+  if (e.key === 'F12') {
+    e.preventDefault();
+  }
+  
+  // Disable Ctrl+Shift+I (Inspect)
+  if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+    e.preventDefault();
+  }
+  
+  // Disable Ctrl+Shift+J (Console)
+  if (e.ctrlKey && e.shiftKey && e.key === 'J') {
+    e.preventDefault();
+  }
+  
+  // Disable Ctrl+U (View Source)
+  if (e.ctrlKey && e.key === 'u') {
+    e.preventDefault();
+  }
+
+  // Disable Ctrl+S (Save Page) - Optional but good for preventing easy copies
+  if (e.ctrlKey && e.key === 's') {
+      e.preventDefault();
+  }
+});
